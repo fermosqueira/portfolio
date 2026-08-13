@@ -142,6 +142,10 @@ export const es = {
         title: "Automatización de APIs REST",
         body: "Pruebas de API sobre JSONPlaceholder usando el request fixture de Playwright: verificación de códigos de estado y validación del contenido de las respuestas en GET y POST. Proyecto en construcción — sigue creciendo hacia PUT y DELETE, organización por recurso con patrón API client y pruebas integradas de UI + API.",
       },
+      aplicador: {
+        title: "Aplicador: postulaciones en un click",
+        body: "Herramienta que resuelve un problema propio: enviar el CV a las ofertas que aparecen en LinkedIn y saber después de qué empresa era cada respuesta. Extensión Manifest V3 que detecta los mails en el feed y abre un panel con empresa, puesto e idioma autocompletados desde el post; un servidor local en Python arma el mail desde plantillas bilingües, lo envía por SMTP y etiqueta la copia en Gmail vía IMAP. Backend sin dependencias, 47 tests con fixtures propios y CI que además falla si alguna credencial se cuela al repositorio.",
+      },
       site: {
         title: "Este sitio",
         body: "Sitio bilingüe estático con el contenido tipado como fuente única de verdad, suite E2E en Playwright (paridad de idiomas, accesibilidad, responsive) y CI que corre typecheck, build y tests en cada push. Los dos CVs en PDF salen del mismo contenido.",

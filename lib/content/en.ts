@@ -141,6 +141,10 @@ export const en = {
         title: "REST API automation",
         body: "API tests against JSONPlaceholder using Playwright's request fixture: status code verification and response content validation on GET and POST. Work in progress — growing towards PUT and DELETE, resource-based organisation with an API client pattern, and combined UI + API testing.",
       },
+      aplicador: {
+        title: "Aplicador: job applications in one click",
+        body: "A tool that solves a problem of my own: sending my CV to the openings that show up on LinkedIn, and knowing weeks later which company each reply came from. A Manifest V3 extension spots the addresses in the feed and opens a panel with company, role and language prefilled from the post; a local Python server builds the email from bilingual templates, sends it over SMTP and labels the Gmail copy over IMAP. Dependency-free backend, 47 tests with their own fixtures, and CI that also fails if a credential ever gets committed.",
+      },
       site: {
         title: "This site",
         body: "Static bilingual site with typed content as the single source of truth, a Playwright E2E suite (language parity, accessibility, responsive) and CI running typecheck, build and tests on every push. Both PDF CVs come out of the same content.",

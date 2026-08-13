@@ -224,7 +224,7 @@ export const AI_CARD_META: Record<AiCardId, { tools: readonly string[] }> = {
 
 /* ------------------------------------------------------------------ projects */
 
-export const PROJECT_IDS = ["e2e", "api", "site"] as const;
+export const PROJECT_IDS = ["e2e", "api", "aplicador", "site"] as const;
 export type ProjectId = (typeof PROJECT_IDS)[number];
 
 export const PROJECT_META: Record<
@@ -240,6 +240,11 @@ export const PROJECT_META: Record<
     stack: ["Playwright", "TypeScript", "REST", "GitHub Actions"],
     url: null,
     repo: `${PROFILE.github}/PlaywrightApiTestAutomation`,
+  },
+  aplicador: {
+    stack: ["Python", "SQLite", "Chrome Extension MV3", "SMTP/IMAP", "GitHub Actions"],
+    url: null,
+    repo: `${PROFILE.github}/aplicator`,
   },
   site: {
     stack: ["Next.js", "TypeScript", "Tailwind", "Playwright", "GitHub Actions"],
