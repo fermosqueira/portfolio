@@ -23,7 +23,6 @@ export const en = {
     present: "Present",
     downloadCv: "Download CV",
     switchLanguage: "Switch language",
-    switchTo: "Español",
     skipToContent: "Skip to content",
   },
 

@@ -25,9 +25,8 @@ export interface Content {
   common: {
     present: string;
     downloadCv: string;
-    /** Accessible label for the language switch. */
+    /** Accessible label for the language switch group. */
     switchLanguage: string;
-    switchTo: string;
     skipToContent: string;
   };
 

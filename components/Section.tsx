@@ -17,7 +17,8 @@ export function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-24 py-14 sm:py-20">
+    // No scroll-margin here: html's scroll-padding-top owns the anchor offset.
+    <section id={id} aria-labelledby={`${id}-heading`} className="py-14 sm:py-20">
       <Reveal>
         <div className="mb-8 flex items-baseline gap-3">
           <span aria-hidden className="font-mono text-xs tracking-widest text-accent">

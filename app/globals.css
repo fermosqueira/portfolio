@@ -26,8 +26,22 @@
 
 html {
   scroll-behavior: smooth;
-  /* Keep anchored sections clear of the sticky nav. */
-  scroll-padding-top: 5.5rem;
+  /*
+   * Lands a section heading ~24px below the sticky nav.
+   *
+   * The offset is small because it is measured to the section's top edge, and
+   * each section already carries its own top padding above the heading:
+   *   nav (64px) + gap (24px) - section padding-top = scroll-padding-top
+   * Sections must not also set scroll-margin-top — the two offsets add up and
+   * push the heading far down the viewport.
+   */
+  scroll-padding-top: 2rem; /* 88 - 56 (py-14) */
+}
+
+@media (min-width: 40rem) {
+  html {
+    scroll-padding-top: 0.5rem; /* 88 - 80 (sm:py-20) */
+  }
 }
 
 body {

@@ -65,6 +65,43 @@ test.describe("quality gates", () => {
     }
   }
 
+  /**
+   * Regression: the anchor offset was applied twice — `scroll-padding-top` on
+   * html and `scroll-margin-top` on every section — which stacked and dropped
+   * each heading ~200px below the nav instead of just under it.
+   */
+  test("nav anchors land the heading just below the sticky nav", async ({ page }) => {
+    await page.goto("/es");
+    const navHeight = await page
+      .locator("header")
+      .evaluate((n) => n.getBoundingClientRect().height);
+
+    // Skips #contact: it is the last section, so the page runs out of scroll
+    // before it can reach the top and the offset is not meaningful there.
+    for (const id of ["experience", "ai", "projects"]) {
+      await page.evaluate((target) => {
+        location.hash = "";
+        location.hash = `#${target}`;
+      }, id);
+
+      await expect
+        .poll(
+          async () =>
+            Math.round(
+              await page.locator(`#${id} h2`).evaluate((n) => n.getBoundingClientRect().top),
+            ),
+          { message: `#${id} never settled under the nav` },
+        )
+        .toBeLessThan(navHeight + 60);
+
+      const gap = await page
+        .locator(`#${id} h2`)
+        .evaluate((n, nav) => n.getBoundingClientRect().top - nav, navHeight);
+
+      expect(gap, `#${id} heading is hidden behind the nav`).toBeGreaterThan(0);
+    }
+  });
+
   test("structured data describes a Person", async ({ page }) => {
     await page.goto("/es");
     const raw = await page.locator('script[type="application/ld+json"]').innerText();

@@ -1,36 +1,50 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import type { Locale } from "@/lib/content/schema";
-import { otherLocale } from "@/lib/i18n";
+import { LOCALES, type Locale } from "@/lib/content/schema";
+
+const LABELS: Record<Locale, string> = { es: "ES", en: "EN" };
 
 /**
- * Switches locale while keeping the reader where they were: the current hash
- * rides along, so someone reading Experience in Spanish lands on Experience in
- * English rather than back at the top.
+ * Both languages are always visible with the current one marked, rather than a
+ * single button naming the other language — "English" reads equally well as
+ * "you are here" and "go here", and the reader shouldn't have to guess.
+ *
+ * Switching keeps the reader in place: the current hash rides along, so someone
+ * reading Experience in Spanish lands on Experience in English.
  */
-export function LangToggle({
-  lang,
-  label,
-  ariaLabel,
-}: {
-  lang: Locale;
-  label: string;
-  ariaLabel: string;
-}) {
+export function LangToggle({ lang, groupLabel }: { lang: Locale; groupLabel: string }) {
   const router = useRouter();
-  const target = otherLocale(lang);
 
   return (
-    <button
-      type="button"
-      lang={target}
-      aria-label={ariaLabel}
-      data-testid="lang-toggle"
-      onClick={() => router.push(`/${target}${window.location.hash}`)}
-      className="whitespace-nowrap rounded-full border border-line px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:border-accent-dim hover:text-accent"
+    <div
+      role="group"
+      aria-label={groupLabel}
+      className="flex items-center gap-0.5 rounded-full border border-line p-0.5"
     >
-      {label}
-    </button>
+      {LOCALES.map((locale) => {
+        const active = locale === lang;
+
+        return (
+          <button
+            key={locale}
+            type="button"
+            lang={locale}
+            aria-current={active ? "true" : undefined}
+            data-testid={active ? "lang-current" : "lang-toggle"}
+            onClick={() => {
+              if (!active) router.push(`/${locale}${window.location.hash}`);
+            }}
+            className={
+              active
+                ? "rounded-full bg-accent px-2.5 py-1 font-mono text-xs font-medium text-racing"
+                : "rounded-full px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:text-accent"
+            }
+          >
+            {LABELS[locale]}
+          </button>
+        );
+      })}
+    </div>
   );
 }

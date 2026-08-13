@@ -42,11 +42,7 @@ export function Nav({ lang }: { lang: Locale }) {
           >
             {t.common.downloadCv}
           </a>
-          <LangToggle
-            lang={lang}
-            label={t.common.switchTo}
-            ariaLabel={t.common.switchLanguage}
-          />
+          <LangToggle lang={lang} groupLabel={t.common.switchLanguage} />
         </div>
       </nav>
     </header>
