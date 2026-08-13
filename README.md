@@ -1,5 +1,7 @@
 # fermosqueira
 
+[![CI](https://github.com/fermosqueira/fermosqueira/actions/workflows/ci.yml/badge.svg)](https://github.com/fermosqueira/fermosqueira/actions/workflows/ci.yml)
+
 Personal site for Fernando Mosqueira, QA Analyst. Bilingual (ES/EN), statically
 generated, deployed on Vercel.
 
