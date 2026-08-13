@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        # Also proves both locales satisfy the shared Content contract.
+        run: npm run typecheck
+
+      - run: npm run lint
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Fail if the committed CVs are stale
+        # The PDFs carry a creation date so they never match byte-for-byte;
+        # the snapshot hashes the deterministic HTML behind them instead.
+        run: |
+          npm run cv
+          git diff --exit-code scripts/cv-snapshot.json \
+            || (echo "::error::Content changed without regenerating the CVs. Run 'npm run cv' and commit." && exit 1)
+
+      - name: End-to-end tests
+        run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
