@@ -6,6 +6,8 @@ import {
   EXPERIENCE_IDS,
   EXPERIENCE_META,
   PROFILE,
+  REFERENCE_IDS,
+  REFERENCE_META,
   SKILL_GROUP_IDS,
   SKILL_ITEMS,
   formatPeriod,
@@ -26,8 +28,8 @@ const STYLES = `
 
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 10.1pt;
-    line-height: 1.42;
+    font-size: 9.7pt;
+    line-height: 1.35;
     color: #1a1a1a;
     background: #fff;
   }
@@ -54,8 +56,8 @@ const STYLES = `
   .contact a { color: #555; text-decoration: none; }
 
   h2 {
-    margin-top: 16px;
-    padding-bottom: 3px;
+    margin-top: 12px;
+    padding-bottom: 2px;
     border-bottom: 0.9px solid #999;
     font-size: 9pt;
     font-weight: 700;
@@ -76,8 +78,8 @@ const STYLES = `
   }
   .skill-items { font-size: 8.8pt; color: #222; }
 
-  .job { margin-top: 11px; }
-  .job:first-child { margin-top: 7px; }
+  .job { margin-top: 9px; }
+  .job:first-child { margin-top: 6px; }
   .job-head {
     display: flex;
     justify-content: space-between;
@@ -100,6 +102,11 @@ const STYLES = `
 
   .inline { margin-top: 5px; font-size: 9pt; }
   .muted { color: #555; }
+
+  .refs { margin-top: 5px; display: flex; gap: 26px; }
+  .ref { flex: 1 1 0; font-size: 8.8pt; }
+  .ref-name { font-weight: 700; }
+  .ref-contact { color: #555; }
 `;
 
 const escape = (value: string) =>
@@ -174,6 +181,15 @@ export function renderCv(locale: Locale): string {
         ${inProgressTitles.map(escape).join(" · ")} — Anthropic Academy</div>`
     : "";
 
+  const references = REFERENCE_IDS.map((id) => {
+    const ref = REFERENCE_META[id];
+    return `
+      <div class="ref">
+        <div class="ref-name">${escape(ref.name)} — ${escape(ref.company)}</div>
+        <div class="ref-contact">${escape(ref.email)} · ${escape(ref.phone)}</div>
+      </div>`;
+  }).join("");
+
   const languages = t.about.languages
     .map((l) => `${escape(l.name)}: ${escape(l.level)}`)
     .join("  ·  ");
@@ -211,7 +227,7 @@ export function renderCv(locale: Locale): string {
   <section><div class="inline">${languages}</div></section>
 
   <h2>${escape(t.cv.referencesHeading)}</h2>
-  <section><div class="inline muted">${escape(t.contact.references)}</div></section>
+  <section><div class="refs">${references}</div></section>
 </body>
 </html>`;
 }

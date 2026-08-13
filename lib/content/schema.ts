@@ -165,6 +165,33 @@ export const CERTIFICATION_META: Record<
   },
 };
 
+/* ---------------------------------------------------------------- references */
+
+export const REFERENCE_IDS = ["magnolfi", "dorrego"] as const;
+export type ReferenceId = (typeof REFERENCE_IDS)[number];
+
+/**
+ * Only rendered into the generated PDFs — the website still says "available on
+ * request". Both people gave Fernando permission to publish their details.
+ */
+export const REFERENCE_META: Record<
+  ReferenceId,
+  { name: string; company: string; email: string; phone: string }
+> = {
+  magnolfi: {
+    name: "Gabriela Magnolfi",
+    company: "NAIF",
+    email: "naifoficinas@gmail.com",
+    phone: "+54 9 11 5347-6283",
+  },
+  dorrego: {
+    name: "Federico Dorrego",
+    company: "ICONEXT",
+    email: "dorrego.fede@gmail.com",
+    phone: "+54 9 11 6966-3133",
+  },
+};
+
 /* -------------------------------------------------------------------- skills */
 
 export const SKILL_GROUP_IDS = ["testing", "tools", "methods"] as const;
