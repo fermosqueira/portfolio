@@ -42,6 +42,7 @@ export const PROFILE = {
   github: "https://github.com/fermosqueira",
   githubLabel: "github.com/fermosqueira",
   site: "https://fermosqueira.vercel.app",
+  siteLabel: "fermosqueira.vercel.app",
 } as const;
 
 /* --------------------------------------------------------------------- dates */

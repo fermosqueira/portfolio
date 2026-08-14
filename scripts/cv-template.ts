@@ -120,11 +120,19 @@ export function renderCv(locale: Locale): string {
   const t = getDictionary(locale);
 
   // The public PDF carries the same channels as the site: no phone, no address.
+  //
+  // Rendered as real anchors, not plain text: Playwright keeps <a href> as clickable
+  // annotations in the generated PDF, so a recruiter can reach the portfolio from the
+  // attachment itself — which is the copy that gets forwarded internally and reopened
+  // weeks later, when the original email is long gone.
   const contact = [
-    `${PROFILE.emailUser}@${PROFILE.emailDomain}`,
-    PROFILE.linkedinLabel,
-    PROFILE.githubLabel,
-  ].join("  |  ");
+    [`mailto:${PROFILE.emailUser}@${PROFILE.emailDomain}`, `${PROFILE.emailUser}@${PROFILE.emailDomain}`],
+    [PROFILE.linkedin, PROFILE.linkedinLabel],
+    [PROFILE.github, PROFILE.githubLabel],
+    [PROFILE.site, PROFILE.siteLabel],
+  ]
+    .map(([href, label]) => `<a href="${escape(href)}">${escape(label)}</a>`)
+    .join("  |  ");
 
   const skills = SKILL_GROUP_IDS.map(
     (group) => `
@@ -205,7 +213,7 @@ export function renderCv(locale: Locale): string {
   <header>
     <h1>${escape(PROFILE.name)}</h1>
     <div class="role">${escape(t.hero.role)}</div>
-    <div class="contact">${escape(contact)}</div>
+    <div class="contact">${contact}</div>
   </header>
 
   <h2>${escape(t.cv.summaryHeading)}</h2>
