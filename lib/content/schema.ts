@@ -250,7 +250,6 @@ export const PROJECT_META: Record<
   site: {
     stack: ["Next.js", "TypeScript", "Tailwind", "Playwright", "GitHub Actions"],
     url: PROFILE.site,
-    // TODO: completar cuando el repo de este sitio sea público.
-    repo: null,
+    repo: `${PROFILE.github}/portfolio`,
   },
 };

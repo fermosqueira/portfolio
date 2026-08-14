@@ -143,7 +143,7 @@ export const en = {
       },
       aplicador: {
         title: "Aplicador: job applications in one click",
-        body: "A tool that solves a problem of my own: sending my CV to the openings that show up on LinkedIn, and knowing weeks later which company each reply came from. A Manifest V3 extension spots the addresses in the feed and opens a panel with company, role and language prefilled from the post; a local Python server builds the email from bilingual templates, sends it over SMTP and labels the Gmail copy over IMAP. Dependency-free backend, 47 tests with their own fixtures, and CI that also fails if a credential ever gets committed.",
+        body: "A tool that solves a problem of my own: sending my CV to the openings that show up on LinkedIn, and knowing a month later which opening each reply belongs to. A Manifest V3 extension spots the addresses in the feed —including the ones LinkedIn turns into mailto links— and opens a panel with company, role and language prefilled from the post; a local Python server builds the email from bilingual templates, sends it over SMTP and labels the Gmail copy over IMAP. It stores the whole post, so a search finds it later by any word it contained, and a matcher pairs replies using Gmail's conversation id. Dependency-free backend, 79 tests with their own fixtures, and CI that also fails if a credential ever gets committed.",
       },
       site: {
         title: "This site",

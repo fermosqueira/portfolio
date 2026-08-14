@@ -144,7 +144,7 @@ export const es = {
       },
       aplicador: {
         title: "Aplicador: postulaciones en un click",
-        body: "Herramienta que resuelve un problema propio: enviar el CV a las ofertas que aparecen en LinkedIn y saber después de qué empresa era cada respuesta. Extensión Manifest V3 que detecta los mails en el feed y abre un panel con empresa, puesto e idioma autocompletados desde el post; un servidor local en Python arma el mail desde plantillas bilingües, lo envía por SMTP y etiqueta la copia en Gmail vía IMAP. Backend sin dependencias, 47 tests con fixtures propios y CI que además falla si alguna credencial se cuela al repositorio.",
+        body: "Herramienta que resuelve un problema propio: enviar el CV a las ofertas que aparecen en LinkedIn y saber, un mes después, de qué oferta era cada respuesta. Extensión Manifest V3 que detecta los mails en el feed —también los que LinkedIn convierte en links mailto— y abre un panel con empresa, puesto e idioma autocompletados desde la publicación; un servidor local en Python arma el mail desde plantillas bilingües, lo envía por SMTP y etiqueta la copia en Gmail vía IMAP. Guarda la publicación entera, así que un buscador la encuentra después por cualquier palabra que tuviera adentro, y un detector empareja las respuestas usando el id de conversación de Gmail. Backend sin dependencias, 79 tests con fixtures propios y CI que además falla si alguna credencial se cuela al repositorio.",
       },
       site: {
         title: "Este sitio",
