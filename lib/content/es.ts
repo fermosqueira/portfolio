@@ -134,6 +134,10 @@ export const es = {
   projects: {
     heading: "Proyectos",
     items: {
+      aiQa: {
+        title: "Diseño de pruebas asistido por IA, revisado caso por caso",
+        body: "Dos user stories, 22 casos de prueba generados por un asistente de IA y un veredicto escrito para cada uno: aceptado, corregido o rechazado, con el motivo. 15 entraron a la suite de Playwright. Cuatro están marcados como fallo esperado porque, al correrlos, aparecieron defectos reales en la aplicación bajo prueba: un monto negativo invierte la transferencia, y el campo de importe acepta centavos que la app después descarta sin avisar. El punto no es que la IA haya escrito los tests. Es que la revisión está escrita y cualquiera puede auditarla.",
+      },
       e2e: {
         title: "Suite E2E con Page Object Model",
         body: "Automatización end-to-end sobre the-internet.herokuapp.com: login exitoso y fallido, manejo de elementos dinámicos y flujos encadenados. Page Objects con una BasePage compartida, fixtures de Playwright para inyectar dependencias y casos data-driven que recorren varios escenarios de error desde un mismo test. Corre en GitHub Actions en cada push y PR, con el reporte HTML como artefacto.",

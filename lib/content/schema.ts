@@ -225,13 +225,18 @@ export const AI_CARD_META: Record<AiCardId, { tools: readonly string[] }> = {
 
 /* ------------------------------------------------------------------ projects */
 
-export const PROJECT_IDS = ["e2e", "api", "aplicador", "site"] as const;
+export const PROJECT_IDS = ["aiQa", "e2e", "api", "aplicador", "site"] as const;
 export type ProjectId = (typeof PROJECT_IDS)[number];
 
 export const PROJECT_META: Record<
   ProjectId,
   { stack: readonly string[]; url: string | null; repo: string | null }
 > = {
+  aiQa: {
+    stack: ["Playwright", "TypeScript", "Claude Code", "GitHub Actions"],
+    url: null,
+    repo: `${PROFILE.github}/ai-assisted-qa`,
+  },
   e2e: {
     stack: ["Playwright", "TypeScript", "Page Object Model", "GitHub Actions"],
     url: null,
