@@ -32,6 +32,8 @@ export const en = {
     chips: ["Playwright", "API Testing", "AI-Driven QA"],
     ctaContact: "Get in touch",
     ctaLinkedin: "LinkedIn",
+    available: "Available for work",
+    statCaption: "The same suite that runs on every push to this repo.",
   },
 
   about: {
@@ -156,6 +158,8 @@ export const en = {
     },
     viewLive: "View live",
     viewRepo: "View repository",
+    shippedLabel: "Shipped",
+    wipLabel: "In progress",
   },
 
   contact: {

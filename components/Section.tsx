@@ -2,8 +2,9 @@ import type { SectionId } from "@/lib/content/schema";
 import { Reveal } from "./Reveal";
 
 /**
- * One numbered section. The mono counter (`01 / SOBRE MÍ`) is the only
- * decoration the layout allows itself.
+ * One numbered section, prefixed with the same ✓ used on a passing test and
+ * on a completed certification — the whole page reads as one status system
+ * rather than three unrelated decorations.
  */
 export function Section({
   id,
@@ -21,7 +22,11 @@ export function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="py-14 sm:py-20">
       <Reveal>
         <div className="mb-8 flex items-baseline gap-3">
-          <span aria-hidden className="font-mono text-xs tracking-widest text-accent">
+          <span
+            aria-hidden
+            className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-accent"
+          >
+            <span className="text-[0.85em]">✓</span>
             {String(index).padStart(2, "0")}
           </span>
           <h2

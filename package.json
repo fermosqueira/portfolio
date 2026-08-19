@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "cv": "tsx scripts/build-cv.ts",
+    "verify:stats": "tsx scripts/verify-test-stats.ts",
     "test:e2e": "playwright test"
   },
   "dependencies": {

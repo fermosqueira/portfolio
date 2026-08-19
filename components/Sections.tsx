@@ -103,10 +103,13 @@ export function Experience({ lang, index }: { lang: Locale; index: number }) {
                 </p>
               )}
 
+              {/* "+" reads as a diff line: what this role actually added. */}
               <ul className="mt-4 space-y-2.5">
                 {item.bullets.map((bullet) => (
                   <li key={bullet.slice(0, 24)} className="flex gap-3 text-sm leading-relaxed text-muted">
-                    <span aria-hidden className="mt-2 h-px w-3 shrink-0 bg-line-strong" />
+                    <span aria-hidden className="mt-px shrink-0 font-mono text-accent-dim">
+                      +
+                    </span>
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -178,9 +181,10 @@ export function Certifications({ lang, index }: { lang: Locale; index: number })
                 className={
                   done
                     ? "rounded-full bg-accent px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-racing"
-                    : "rounded-full border border-line-strong px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-muted"
+                    : "rounded-full border border-warn/40 px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-warn"
                 }
               >
+                {done ? "✓ " : "› "}
                 {done ? t.certifications.completedLabel : t.certifications.inProgressLabel}
               </span>
               <span className="text-sm text-fg">{meta.title}</span>
@@ -238,9 +242,23 @@ export function Projects({ lang, index }: { lang: Locale; index: number }) {
           const meta = PROJECT_META[id];
           const item = t.projects.items[id];
 
+          const shipped = meta.status === "shipped";
+
           return (
             <article key={id} className="rounded-lg border border-line bg-surface p-5">
-              <h3 className="text-base font-medium text-fg">{item.title}</h3>
+              <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1.5">
+                <h3 className="min-w-0 text-base font-medium text-fg">{item.title}</h3>
+                <span
+                  className={
+                    shipped
+                      ? "shrink-0 whitespace-nowrap rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-accent"
+                      : "shrink-0 whitespace-nowrap rounded-full border border-warn/40 px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-warn"
+                  }
+                >
+                  {shipped ? "✓ " : "› "}
+                  {shipped ? t.projects.shippedLabel : t.projects.wipLabel}
+                </span>
+              </div>
               <p className="mt-2.5 text-sm leading-relaxed text-muted">{item.body}</p>
 
               <ul className="mt-4 flex flex-wrap gap-2">

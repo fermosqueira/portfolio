@@ -30,6 +30,9 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Verify the hero's test-count claim
+        run: npm run verify:stats
+
       - name: Fail if the committed CVs are stale
         # The PDFs carry a creation date so they never match byte-for-byte;
         # the snapshot hashes the deterministic HTML behind them instead.

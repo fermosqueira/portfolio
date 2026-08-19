@@ -69,6 +69,19 @@ export function formatPeriod(
   return `${formatYearMonth(start, locale)} – ${end ? formatYearMonth(end, locale) : presentLabel}`;
 }
 
+/* -------------------------------------------------------------- test stats */
+
+/**
+ * The hero's "$ npx playwright test" readout. A claim like this is exactly
+ * what a QA hiring manager checks, so it must not silently go stale: run
+ * `npm run verify:stats` (also gated in CI) after touching tests/e2e/ — it
+ * fails the build if the real suite no longer matches these numbers.
+ */
+export const TEST_STATS = {
+  passed: 29,
+  specFiles: 3,
+} as const;
+
 /* ---------------------------------------------------------------- experience */
 
 export const EXPERIENCE_IDS = ["iconext", "naif"] as const;
@@ -228,33 +241,41 @@ export const AI_CARD_META: Record<AiCardId, { tools: readonly string[] }> = {
 export const PROJECT_IDS = ["aiQa", "e2e", "api", "aplicador", "site"] as const;
 export type ProjectId = (typeof PROJECT_IDS)[number];
 
+export type ProjectStatus = "shipped" | "wip";
+
 export const PROJECT_META: Record<
   ProjectId,
-  { stack: readonly string[]; url: string | null; repo: string | null }
+  { stack: readonly string[]; url: string | null; repo: string | null; status: ProjectStatus }
 > = {
   aiQa: {
     stack: ["Playwright", "TypeScript", "Claude Code", "GitHub Actions"],
     url: null,
     repo: `${PROFILE.github}/ai-assisted-qa`,
+    status: "shipped",
   },
   e2e: {
     stack: ["Playwright", "TypeScript", "Page Object Model", "GitHub Actions"],
     url: null,
     repo: `${PROFILE.github}/PlaywrightTestAutomation`,
+    status: "shipped",
   },
   api: {
     stack: ["Playwright", "TypeScript", "REST", "GitHub Actions"],
     url: null,
     repo: `${PROFILE.github}/PlaywrightApiTestAutomation`,
+    // The body copy says so itself: "en construcción" / "Work in progress".
+    status: "wip",
   },
   aplicador: {
     stack: ["Python", "SQLite", "Chrome Extension MV3", "SMTP/IMAP", "GitHub Actions"],
     url: null,
     repo: `${PROFILE.github}/aplicator`,
+    status: "shipped",
   },
   site: {
     stack: ["Next.js", "TypeScript", "Tailwind", "Playwright", "GitHub Actions"],
     url: PROFILE.site,
     repo: `${PROFILE.github}/portfolio`,
+    status: "shipped",
   },
 };

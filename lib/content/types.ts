@@ -36,6 +36,10 @@ export interface Content {
     chips: readonly string[];
     ctaContact: string;
     ctaLinkedin: string;
+    /** Accessible label for the pulsing dot on the monogram. */
+    available: string;
+    /** One line under the test-stat readout, e.g. "the suite that runs on every push". */
+    statCaption: string;
   };
 
   about: {
@@ -82,6 +86,8 @@ export interface Content {
     items: Record<ProjectId, { title: string; body: string }>;
     viewLive: string;
     viewRepo: string;
+    shippedLabel: string;
+    wipLabel: string;
   };
 
   contact: {
