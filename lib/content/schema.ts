@@ -95,7 +95,9 @@ export const EXPERIENCE_META: Record<
     company: "ICONEXT",
     start: "2024-08",
     end: null,
-    tags: ["Playwright", "TypeScript", "Postman", "Swagger", "Trello", "Agile"],
+    // Playwright/TypeScript deliberately absent: that's self-directed work,
+    // shown honestly under Projects — not something done at this job.
+    tags: ["Postman", "Swagger", "Trello", "Agile"],
   },
   naif: {
     company: "NAIF",

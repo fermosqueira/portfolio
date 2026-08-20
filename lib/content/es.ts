@@ -4,7 +4,7 @@ export const es = {
   meta: {
     title: "Fernando Mosqueira — QA Analyst",
     description:
-      "QA Analyst. Testing funcional y de APIs, automatización con Playwright y TypeScript, y un flujo de trabajo asistido por IA.",
+      "QA Analyst. Testing funcional y de APIs, automatización con Playwright y TypeScript en proyectos propios, y un flujo de trabajo asistido por IA.",
     ogAlt: "Fernando Mosqueira — QA Analyst",
   },
 
@@ -40,7 +40,7 @@ export const es = {
     heading: "Sobre mí",
     body: [
       "Pasé cinco años controlando procesos, costos y datos en sistemas ERP. Ese trabajo me dejó una obsesión bastante útil: encontrar dónde algo se rompe antes de que le llegue a alguien.",
-      "Hoy hago lo mismo con software. Diseño planes de prueba, valido APIs, automatizo regresión y documento defectos con trazabilidad completa. Y me meto desde el principio del desarrollo, no cuando ya es tarde para arreglar nada.",
+      "Hoy hago lo mismo con software. Diseño planes de prueba, valido APIs y documento defectos con trazabilidad completa. La automatización la vengo sumando por mi cuenta, en proyectos propios — todavía no es algo que haya hecho en un rol formal. Me meto desde el principio del desarrollo, no cuando ya es tarde para arreglar nada.",
       "Uso IA todos los días para acelerar la parte tediosa del trabajo. El criterio sigue siendo mío.",
     ],
     languagesLabel: "Idiomas",
@@ -68,7 +68,6 @@ export const es = {
         bullets: [
           "Diseñé y ejecuté planes de prueba funcionales y no funcionales en frontend y backend, documentando defectos críticos con trazabilidad completa.",
           "Validé APIs REST con Postman y Swagger, verificando integridad de endpoints, contratos y manejo de errores.",
-          "Desarrollé y mantuve suites de pruebas automatizadas con Playwright y TypeScript, reduciendo el tiempo de regresión manual.",
           "Implementé pruebas exploratorias y de UX/UI, con feedback accionable para desarrollo y diseño.",
           "Gestioné el ciclo de vida de defectos en Trello, asegurando trazabilidad, SLA y resolución efectiva.",
           "Participé en ceremonias ágiles integrando QA desde etapas tempranas del desarrollo.",

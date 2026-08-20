@@ -4,7 +4,7 @@ export const en = {
   meta: {
     title: "Fernando Mosqueira — QA Analyst",
     description:
-      "QA Analyst. Functional and API testing, automation with Playwright and TypeScript, and an AI-assisted workflow.",
+      "QA Analyst. Functional and API testing, automation with Playwright and TypeScript in personal projects, and an AI-assisted workflow.",
     ogAlt: "Fernando Mosqueira — QA Analyst",
   },
 
@@ -40,7 +40,7 @@ export const en = {
     heading: "About",
     body: [
       "I spent five years auditing operational processes, costs and ERP data. That job left me with a genuinely useful obsession: finding where something breaks before it reaches anyone.",
-      "I do the same thing with software now. I design test plans, validate APIs, automate regression and document defects with full traceability. And I get involved early in development, not once it's too late to fix anything.",
+      "I do the same thing with software now. I design test plans, validate APIs and document defects with full traceability. The automation side I've been building on my own, in personal projects — not yet something I've done in a formal role. I get involved early in development, not once it's too late to fix anything.",
       "I use AI every day to speed up the tedious part of the job. The judgment is still mine.",
     ],
     languagesLabel: "Languages",
@@ -68,7 +68,6 @@ export const en = {
         bullets: [
           "Designed and ran functional and non-functional test plans across frontend and backend, documenting critical defects with full traceability.",
           "Validated REST APIs with Postman and Swagger, verifying endpoint integrity, contracts and error handling.",
-          "Built and maintained automated test suites with Playwright and TypeScript, cutting manual regression time.",
           "Ran exploratory and UX/UI testing, giving developers and designers actionable feedback.",
           "Managed the defect lifecycle in Trello, keeping traceability, SLAs and effective resolution on track.",
           "Took part in Agile ceremonies, bringing QA in from the early stages of development.",
