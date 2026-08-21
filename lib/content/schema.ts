@@ -165,8 +165,8 @@ export const CERTIFICATION_META: Record<
   "agent-skills": {
     title: "Introduction to Agent Skills",
     issuer: "Anthropic Academy",
-    status: "in-progress",
-    date: null,
+    status: "completed",
+    date: "2026-08",
   },
   subagents: {
     title: "Introduction to Subagents",
