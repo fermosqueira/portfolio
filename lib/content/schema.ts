@@ -159,8 +159,8 @@ export const CERTIFICATION_META: Record<
   "claude-code-in-action": {
     title: "Claude Code in Action",
     issuer: "Anthropic Academy",
-    status: "in-progress",
-    date: null,
+    status: "completed",
+    date: "2026-08",
   },
   "agent-skills": {
     title: "Introduction to Agent Skills",
