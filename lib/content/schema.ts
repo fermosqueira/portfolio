@@ -97,7 +97,8 @@ export const EXPERIENCE_META: Record<
     end: null,
     // Playwright/TypeScript deliberately absent: that's self-directed work,
     // shown honestly under Projects — not something done at this job.
-    tags: ["Postman", "Swagger", "Trello", "Agile"],
+    // Switched from Trello to Asana ~3 months before this was last checked.
+    tags: ["Postman", "Swagger", "Asana", "Agile"],
   },
   naif: {
     company: "NAIF",
@@ -223,7 +224,7 @@ export const SKILL_ITEMS: Record<SkillGroupId, readonly string[]> = {
     "UX/UI Testing",
     "Automated Testing",
   ],
-  tools: ["Playwright", "TypeScript", "Postman", "Swagger", "GitHub", "Trello"],
+  tools: ["Playwright", "TypeScript", "Postman", "Swagger", "GitHub", "Asana"],
   methods: ["Agile/Scrum", "Bug Tracking", "Test Case Design", "AI-Driven Testing"],
 };
 

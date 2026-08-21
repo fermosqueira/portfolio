@@ -69,7 +69,7 @@ export const es = {
           "Diseñé y ejecuté planes de prueba funcionales y no funcionales en frontend y backend, documentando defectos críticos con trazabilidad completa.",
           "Validé APIs REST con Postman y Swagger, verificando integridad de endpoints, contratos y manejo de errores.",
           "Implementé pruebas exploratorias y de UX/UI, con feedback accionable para desarrollo y diseño.",
-          "Gestioné el ciclo de vida de defectos en Trello, asegurando trazabilidad, SLA y resolución efectiva.",
+          "Gestioné el ciclo de vida de defectos en Asana, asegurando trazabilidad, SLA y resolución efectiva.",
           "Participé en ceremonias ágiles integrando QA desde etapas tempranas del desarrollo.",
         ],
       },

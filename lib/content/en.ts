@@ -69,7 +69,7 @@ export const en = {
           "Designed and ran functional and non-functional test plans across frontend and backend, documenting critical defects with full traceability.",
           "Validated REST APIs with Postman and Swagger, verifying endpoint integrity, contracts and error handling.",
           "Ran exploratory and UX/UI testing, giving developers and designers actionable feedback.",
-          "Managed the defect lifecycle in Trello, keeping traceability, SLAs and effective resolution on track.",
+          "Managed the defect lifecycle in Asana, keeping traceability, SLAs and effective resolution on track.",
           "Took part in Agile ceremonies, bringing QA in from the early stages of development.",
         ],
       },
