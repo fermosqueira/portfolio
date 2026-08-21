@@ -152,8 +152,8 @@ export const CERTIFICATION_META: Record<
   "ai-fluency": {
     title: "AI Fluency: Framework & Foundations",
     issuer: "Anthropic Academy",
-    status: "in-progress",
-    date: null,
+    status: "completed",
+    date: "2026-08",
   },
   "claude-code-in-action": {
     title: "Claude Code in Action",
