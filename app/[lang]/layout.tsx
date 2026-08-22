@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
@@ -88,6 +89,7 @@ export default async function LangLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd(lang)) }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
