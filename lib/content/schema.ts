@@ -130,6 +130,7 @@ export const CERTIFICATION_IDS = [
   "agent-skills",
   "subagents",
   "claude-api",
+  "playwright-101",
 ] as const;
 export type CertificationId = (typeof CERTIFICATION_IDS)[number];
 
@@ -179,6 +180,12 @@ export const CERTIFICATION_META: Record<
     issuer: "Anthropic Academy",
     status: "in-progress",
     date: null,
+  },
+  "playwright-101": {
+    title: "Playwright 101",
+    issuer: "TestMu AI (formerly LambdaTest)",
+    status: "completed",
+    date: "2026-08",
   },
 };
 

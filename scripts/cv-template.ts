@@ -28,8 +28,8 @@ const STYLES = `
 
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 9.7pt;
-    line-height: 1.35;
+    font-size: 9.6pt;
+    line-height: 1.32;
     color: #1a1a1a;
     background: #fff;
   }
@@ -56,7 +56,7 @@ const STYLES = `
   .contact a { color: #555; text-decoration: none; }
 
   h2 {
-    margin-top: 12px;
+    margin-top: 10px;
     padding-bottom: 2px;
     border-bottom: 0.9px solid #999;
     font-size: 9pt;
@@ -78,8 +78,8 @@ const STYLES = `
   }
   .skill-items { font-size: 8.8pt; color: #222; }
 
-  .job { margin-top: 9px; }
-  .job:first-child { margin-top: 6px; }
+  .job { margin-top: 7px; }
+  .job:first-child { margin-top: 5px; }
   .job-head {
     display: flex;
     justify-content: space-between;
@@ -92,11 +92,11 @@ const STYLES = `
   ul { margin-top: 3px; padding-left: 13px; }
   li { margin-top: 1.5px; }
 
-  .edu { margin-top: 7px; }
+  .edu { margin-top: 5px; }
   .edu-title { font-weight: 700; font-size: 9.6pt; }
   .edu-detail { font-size: 8.6pt; color: #444; }
 
-  .cert { margin-top: 4px; font-size: 9pt; }
+  .cert { margin-top: 3px; font-size: 8.8pt; }
   .cert-meta { color: #555; font-size: 8.4pt; }
   .cert-progress { margin-top: 5px; font-size: 8.6pt; color: #444; }
 
