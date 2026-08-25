@@ -1,5 +1,4 @@
 import {
-  CERTIFICATION_IDS,
   CERTIFICATION_META,
   EDUCATION_IDS,
   EDUCATION_META,
@@ -28,8 +27,8 @@ const STYLES = `
 
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 9.6pt;
-    line-height: 1.32;
+    font-size: 9.7pt;
+    line-height: 1.36;
     color: #1a1a1a;
     background: #fff;
   }
@@ -49,14 +48,14 @@ const STYLES = `
   }
 
   .contact {
-    margin-top: 6px;
-    font-size: 8.4pt;
+    margin-top: 7px;
+    font-size: 8.5pt;
     color: #555;
   }
   .contact a { color: #555; text-decoration: none; }
 
   h2 {
-    margin-top: 10px;
+    margin-top: 12px;
     padding-bottom: 2px;
     border-bottom: 0.9px solid #999;
     font-size: 9pt;
@@ -66,20 +65,20 @@ const STYLES = `
     color: #111;
   }
 
-  section { margin-top: 3px; }
+  section { margin-top: 4px; }
   p { text-align: justify; }
 
-  .skill-row { margin-top: 5px; display: flex; gap: 8px; align-items: baseline; }
+  .skill-row { margin-top: 6px; display: flex; gap: 8px; align-items: baseline; }
   .skill-label {
     flex: 0 0 128px;
-    font-size: 8.4pt;
+    font-size: 8.5pt;
     font-weight: 700;
     color: #333;
   }
-  .skill-items { font-size: 8.8pt; color: #222; }
+  .skill-items { font-size: 8.9pt; color: #222; }
 
-  .job { margin-top: 7px; }
-  .job:first-child { margin-top: 5px; }
+  .job { margin-top: 8px; }
+  .job:first-child { margin-top: 6px; }
   .job-head {
     display: flex;
     justify-content: space-between;
@@ -87,24 +86,24 @@ const STYLES = `
     gap: 12px;
   }
   .job-title { font-size: 10pt; font-weight: 700; }
-  .job-meta { font-size: 8.4pt; color: #555; white-space: nowrap; }
+  .job-meta { font-size: 8.5pt; color: #555; white-space: nowrap; }
 
-  ul { margin-top: 3px; padding-left: 13px; }
-  li { margin-top: 1.5px; }
+  ul { margin-top: 4px; padding-left: 13px; }
+  li { margin-top: 2.5px; }
 
-  .edu { margin-top: 5px; }
-  .edu-title { font-weight: 700; font-size: 9.6pt; }
-  .edu-detail { font-size: 8.6pt; color: #444; }
+  .edu { margin-top: 6px; }
+  .edu-title { font-weight: 700; font-size: 9.7pt; }
+  .edu-detail { font-size: 8.7pt; color: #444; }
 
-  .cert { margin-top: 3px; font-size: 8.8pt; }
-  .cert-meta { color: #555; font-size: 8.4pt; }
-  .cert-progress { margin-top: 5px; font-size: 8.6pt; color: #444; }
+  .cert { margin-top: 4px; font-size: 9pt; }
+  .cert-meta { color: #555; font-size: 8.5pt; }
+  .cert-detail { font-size: 8.9pt; color: #444; }
 
-  .inline { margin-top: 5px; font-size: 9pt; }
+  .inline { margin-top: 6px; font-size: 9pt; }
   .muted { color: #555; }
 
-  .refs { margin-top: 5px; display: flex; gap: 26px; }
-  .ref { flex: 1 1 0; font-size: 8.8pt; }
+  .refs { margin-top: 6px; display: flex; gap: 26px; }
+  .ref { flex: 1 1 0; font-size: 8.9pt; }
   .ref-name { font-weight: 700; }
   .ref-contact { color: #555; }
 `;
@@ -171,23 +170,41 @@ export function renderCv(locale: Locale): string {
       </div>`;
   }).join("");
 
-  const completed = CERTIFICATION_IDS.filter(
-    (id) => CERTIFICATION_META[id].status === "completed",
-  ).map((id) => {
-    const meta = CERTIFICATION_META[id];
-    const date = meta.date ? ` (${formatYearMonth(meta.date, locale)})` : "";
-    return `<div class="cert"><strong>${escape(meta.title)}</strong>
-      <span class="cert-meta">— ${escape(meta.issuer)}${escape(date)}</span></div>`;
-  }).join("");
+  // Curated for the CV specifically — not a generic loop over CERTIFICATION_IDS
+  // like the website's Certifications section. Playwright 101 leads (the one
+  // directly relevant to a QA role); the Anthropic Academy micro-courses are
+  // grouped into one line so they don't outweigh it. In-progress courses are
+  // omitted here — the website still shows those with its own "en curso" badge.
+  // One-line descriptions are grounded in real, verifiable course content:
+  // Playwright 101's from its official syllabus (testmuai.com), the Anthropic
+  // line from what those four courses actually cover.
+  const pw = CERTIFICATION_META["playwright-101"];
+  const pwDate = pw.date ? ` (${formatYearMonth(pw.date, locale)})` : "";
+  const pwDetail =
+    locale === "es"
+      ? "Automatización end-to-end: selectors, auto-waiting, cross-browser testing, Page Object Model."
+      : "End-to-end automation: selectors, auto-waiting, cross-browser testing, Page Object Model.";
 
-  const inProgressTitles = CERTIFICATION_IDS.filter(
-    (id) => CERTIFICATION_META[id].status === "in-progress",
-  ).map((id) => CERTIFICATION_META[id].title);
+  const anthropicIds = [
+    "claude-code-101",
+    "ai-fluency",
+    "claude-code-in-action",
+    "agent-skills",
+  ] as const;
+  const anthropicTitles = anthropicIds.map((id) => CERTIFICATION_META[id].title);
+  const anthropicDate = formatYearMonth(CERTIFICATION_META["claude-code-101"].date!, locale);
+  const anthropicDetail =
+    locale === "es"
+      ? "Uso práctico de Claude Code, fluency en IA y Agent Skills para desarrollo asistido."
+      : "Practical use of Claude Code, AI fluency and Agent Skills for AI-assisted development.";
 
-  const inProgress = inProgressTitles.length
-    ? `<div class="cert-progress"><strong>${escape(t.cv.inProgressPrefix)}:</strong>
-        ${inProgressTitles.map(escape).join(" · ")} — Anthropic Academy</div>`
-    : "";
+  const completed = `
+    <div class="cert"><strong>${escape(pw.title)}</strong>
+      <span class="cert-meta">— ${escape(pw.issuer)}${escape(pwDate)}</span>
+      <span class="cert-detail"> — ${escape(pwDetail)}</span></div>
+    <div class="cert"><strong>Anthropic Academy</strong>
+      <span class="cert-meta">— ${anthropicTitles.map(escape).join(" · ")} (${escape(anthropicDate)})</span>
+      <span class="cert-detail"> — ${escape(anthropicDetail)}</span></div>`;
 
   const references = REFERENCE_IDS.map((id) => {
     const ref = REFERENCE_META[id];
@@ -229,7 +246,7 @@ export function renderCv(locale: Locale): string {
   <section>${education}</section>
 
   <h2>${escape(t.cv.certificationsHeading)}</h2>
-  <section>${completed}${inProgress}</section>
+  <section>${completed}</section>
 
   <h2>${escape(t.cv.languagesHeading)}</h2>
   <section><div class="inline">${languages}</div></section>
