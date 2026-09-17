@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Manrope, Ubuntu } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import { LOCALES, PROFILE, type Locale } from "@/lib/content/schema";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const manrope = Manrope({ variable: "--font-body", subsets: ["latin"] });
+const ubuntu = Ubuntu({ variable: "--font-display", weight: ["500", "700"], subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export function generateStaticParams() {
@@ -81,7 +82,7 @@ export default async function LangLayout({
   if (!isLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${geistSans.variable} ${geistMono.variable} h-full`}>
+    <html lang={lang} className={`${manrope.variable} ${ubuntu.variable} ${geistMono.variable} h-full`}>
       <body className="min-h-full">
         <script
           type="application/ld+json"

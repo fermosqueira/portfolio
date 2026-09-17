@@ -24,7 +24,7 @@ export function Section({
         <div className="mb-8 flex items-baseline gap-3">
           <span
             aria-hidden
-            className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-accent"
+            className="inline-flex items-center gap-1.5 font-mono text-xs tracking-widest text-link"
           >
             <span className="text-[0.85em]">✓</span>
             {String(index).padStart(2, "0")}

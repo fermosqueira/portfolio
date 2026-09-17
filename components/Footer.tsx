@@ -18,7 +18,7 @@ export function Footer({ lang }: { lang: Locale }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-xs text-muted transition-colors hover:text-accent"
+              className="font-mono text-xs text-muted transition-colors hover:text-link"
             >
               {link.label} ↗
             </a>

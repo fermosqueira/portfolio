@@ -84,17 +84,23 @@ export const TEST_STATS = {
 
 /* ---------------------------------------------------------------- experience */
 
-export const EXPERIENCE_IDS = ["iconext", "naif"] as const;
+export const EXPERIENCE_IDS = ["lightit", "iconext", "naif"] as const;
 export type ExperienceId = (typeof EXPERIENCE_IDS)[number];
 
 export const EXPERIENCE_META: Record<
   ExperienceId,
   { company: string; start: YearMonth; end: YearMonth | null; tags: readonly string[] }
 > = {
+  lightit: {
+    company: "Light-it",
+    start: "2026-09",
+    end: null,
+    tags: ["Healthtech", "Agile"],
+  },
   iconext: {
     company: "ICONEXT",
     start: "2024-08",
-    end: null,
+    end: "2026-08",
     // Playwright/TypeScript deliberately absent: that's self-directed work,
     // shown honestly under Projects — not something done at this job.
     // Switched from Trello to Asana ~3 months before this was last checked.

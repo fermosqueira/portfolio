@@ -2,10 +2,10 @@ import type { Content } from "./types";
 
 export const es = {
   meta: {
-    title: "Fernando Mosqueira — QA Analyst",
+    title: "Fernando Mosqueira — QA Specialist",
     description:
-      "QA Analyst. Testing funcional y de APIs, automatización con Playwright y TypeScript en proyectos propios, y un flujo de trabajo asistido por IA.",
-    ogAlt: "Fernando Mosqueira — QA Analyst",
+      "QA Specialist en Light-it. Testing funcional y de APIs, automatización con Playwright y TypeScript en proyectos propios, y un flujo de trabajo asistido por IA.",
+    ogAlt: "Fernando Mosqueira — QA Specialist",
   },
 
   nav: {
@@ -27,12 +27,11 @@ export const es = {
   },
 
   hero: {
-    role: "QA Analyst",
+    role: "QA Specialist",
     tagline: "Rompo cosas a propósito para que no se rompan solas.",
     chips: ["Playwright", "API Testing", "AI-Driven QA"],
     ctaContact: "Hablemos",
     ctaLinkedin: "LinkedIn",
-    available: "Disponible para trabajar",
     statCaption: "La misma suite que corre en cada push a este repo.",
   },
 
@@ -40,7 +39,7 @@ export const es = {
     heading: "Sobre mí",
     body: [
       "Pasé cinco años controlando procesos, costos y datos en sistemas ERP. Ese trabajo me dejó una obsesión bastante útil: encontrar dónde algo se rompe antes de que le llegue a alguien.",
-      "Hoy hago lo mismo con software. Diseño planes de prueba, valido APIs y documento defectos con trazabilidad completa. La automatización la vengo sumando por mi cuenta, en proyectos propios — todavía no es algo que haya hecho en un rol formal. Me meto desde el principio del desarrollo, no cuando ya es tarde para arreglar nada.",
+      "Hoy hago lo mismo con software, como QA Specialist en Light-it. Diseño planes de prueba, valido APIs y documento defectos con trazabilidad completa. La automatización la vengo sumando por mi cuenta, en proyectos propios. Me meto desde el principio del desarrollo, no cuando ya es tarde para arreglar nada.",
       "Uso IA todos los días para acelerar la parte tediosa del trabajo. El criterio sigue siendo mío.",
     ],
     languagesLabel: "Idiomas",
@@ -62,6 +61,14 @@ export const es = {
   experience: {
     heading: "Experiencia",
     items: {
+      lightit: {
+        role: "QA Specialist",
+        kind: null,
+        bullets: [
+          "Me incorporé como QA Specialist en Light-it, empresa de desarrollo de software especializada en salud digital (healthtech).",
+          "Aplico testing funcional, de regresión y de APIs en un contexto ágil, colaborando con equipos de producto y diseño.",
+        ],
+      },
       iconext: {
         role: "QA Analyst",
         kind: "Freelance",
@@ -164,7 +171,7 @@ export const es = {
 
   contact: {
     heading: "Contacto",
-    body: "Estoy buscando trabajo en QA. Si tenés algo en mente, escribime.",
+    body: "Trabajo como QA Specialist en Light-it. Este sitio queda como referencia — si querés contactarme por otro motivo, escribime.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
     references: "Referencias disponibles a pedido.",

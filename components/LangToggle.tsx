@@ -37,8 +37,8 @@ export function LangToggle({ lang, groupLabel }: { lang: Locale; groupLabel: str
             }}
             className={
               active
-                ? "rounded-full bg-accent px-2.5 py-1 font-mono text-xs font-medium text-racing"
-                : "rounded-full px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:text-accent"
+                ? "rounded-full bg-accent px-2.5 py-1 font-mono text-xs font-medium text-accent-fg"
+                : "rounded-full px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:text-link"
             }
           >
             {LABELS[locale]}

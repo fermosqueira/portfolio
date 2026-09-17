@@ -1,30 +1,41 @@
 @import "tailwindcss";
 
 /*
- * Dark-only by design: cool greens on a near-black ground.
- * There is no light theme, so the palette is declared once.
+ * Dark-only by design: violet on deep navy, aligned to Light-it's brand
+ * (lightit.io — bg #1d212f, accent #7345fc, Manrope/Ubuntu). There is no
+ * light theme, so the palette is declared once.
  */
 @theme {
-  --color-bg: #0a0e0c;
-  --color-surface: #101613;
-  --color-surface-alt: #141d18;
-  --color-line: #1e2b25;
-  --color-line-strong: #2c3f36;
-  --color-fg: #e8efea;
-  --color-muted: #8ca398;
-  --color-accent: #3ecf8e;
-  --color-accent-dim: #1f6f4f;
-  --color-racing: #04231a;
+  --color-bg: #1d212f;
+  --color-surface: #262b3d;
+  --color-surface-alt: #2f3549;
+  --color-line: #333a51;
+  --color-line-strong: #454d6b;
+  --color-fg: #fcfcfc;
+  --color-muted: #9aa0ba;
+  --color-accent: #7345fc;
+  --color-accent-dim: #4c3a99;
+  --color-accent-fg: #fcfcfc;
+  /*
+   * #7345fc reads at 3:1 against the page background — enough for a solid
+   * fill with white text on top, not enough for itself to sit as foreground
+   * text on that same background (WCAG needs 4.5:1). This lighter tint is
+   * for every case where accent color is the text, not the fill: links,
+   * labels, the section-number eyebrows.
+   */
+  --color-link: #a78bfa;
+  --color-wash: #241a45;
 
   /*
-   * The only non-green hue on the page, and only ever functional: "in
+   * The only non-violet hue on the page, and only ever functional: "in
    * progress" states (a certification being studied, a project mid-build) —
-   * never decoration. Green still means done everywhere else.
+   * never decoration. Violet still means done everywhere else.
    */
   --color-warn: #d9a441;
   --color-warn-dim: #7a5a1f;
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
@@ -59,7 +70,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* A single wash of racing green behind the top of the page. */
+/* A single violet wash behind the top of the page. */
 body::before {
   content: "";
   position: fixed;
@@ -69,14 +80,14 @@ body::before {
   z-index: -1;
   background: radial-gradient(
     ellipse 80% 60% at 50% 0%,
-    var(--color-racing) 0%,
+    var(--color-wash) 0%,
     transparent 70%
   );
 }
 
 ::selection {
   background-color: var(--color-accent);
-  color: var(--color-racing);
+  color: var(--color-accent-fg);
 }
 
 :focus-visible {
@@ -125,25 +136,3 @@ body::before {
   }
 }
 
-/* Hero monogram: a small "available for work" pulse. */
-@media (prefers-reduced-motion: no-preference) {
-  .status-pulse::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background-color: var(--color-accent);
-    animation: status-pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-}
-
-@keyframes status-pulse {
-  0% {
-    opacity: 0.55;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(2.2);
-  }
-}

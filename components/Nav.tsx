@@ -15,7 +15,7 @@ export function Nav({ lang }: { lang: Locale }) {
       >
         <Link
           href={`/${lang}`}
-          className="font-mono text-sm font-semibold tracking-tight text-accent"
+          className="font-mono text-sm font-semibold tracking-tight text-link"
         >
           {PROFILE.monogram}
         </Link>
@@ -38,7 +38,7 @@ export function Nav({ lang }: { lang: Locale }) {
             href={`/cv-${lang}.pdf`}
             download
             data-testid="download-cv"
-            className="whitespace-nowrap rounded-full border border-line px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:border-accent-dim hover:text-accent"
+            className="whitespace-nowrap rounded-full border border-line px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:border-accent-dim hover:text-link"
           >
             {t.common.downloadCv}
           </a>

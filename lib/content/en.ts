@@ -2,10 +2,10 @@ import type { Content } from "./types";
 
 export const en = {
   meta: {
-    title: "Fernando Mosqueira — QA Analyst",
+    title: "Fernando Mosqueira — QA Specialist",
     description:
-      "QA Analyst. Functional and API testing, automation with Playwright and TypeScript in personal projects, and an AI-assisted workflow.",
-    ogAlt: "Fernando Mosqueira — QA Analyst",
+      "QA Specialist at Light-it. Functional and API testing, automation with Playwright and TypeScript in personal projects, and an AI-assisted workflow.",
+    ogAlt: "Fernando Mosqueira — QA Specialist",
   },
 
   nav: {
@@ -27,12 +27,11 @@ export const en = {
   },
 
   hero: {
-    role: "QA Analyst",
+    role: "QA Specialist",
     tagline: "I break things on purpose so they don't break on their own.",
     chips: ["Playwright", "API Testing", "AI-Driven QA"],
     ctaContact: "Get in touch",
     ctaLinkedin: "LinkedIn",
-    available: "Available for work",
     statCaption: "The same suite that runs on every push to this repo.",
   },
 
@@ -40,7 +39,7 @@ export const en = {
     heading: "About",
     body: [
       "I spent five years auditing operational processes, costs and ERP data. That job left me with a genuinely useful obsession: finding where something breaks before it reaches anyone.",
-      "I do the same thing with software now. I design test plans, validate APIs and document defects with full traceability. The automation side I've been building on my own, in personal projects — not yet something I've done in a formal role. I get involved early in development, not once it's too late to fix anything.",
+      "I do the same thing with software now, as a QA Specialist at Light-it. I design test plans, validate APIs and document defects with full traceability. The automation side I've been building on my own, in personal projects. I get involved early in development, not once it's too late to fix anything.",
       "I use AI every day to speed up the tedious part of the job. The judgment is still mine.",
     ],
     languagesLabel: "Languages",
@@ -62,6 +61,14 @@ export const en = {
   experience: {
     heading: "Experience",
     items: {
+      lightit: {
+        role: "QA Specialist",
+        kind: null,
+        bullets: [
+          "Joined Light-it, a software development company focused on digital health (healthtech), as a QA Specialist.",
+          "Applying functional, regression and API testing in an agile setting, working closely with product and design.",
+        ],
+      },
       iconext: {
         role: "QA Analyst",
         kind: "Freelance",
@@ -163,7 +170,7 @@ export const en = {
 
   contact: {
     heading: "Contact",
-    body: "I'm looking for QA work. If you have something in mind, drop me a line.",
+    body: "I work as a QA Specialist at Light-it. This site stays up as a reference — reach out if you want to connect for any other reason.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
     references: "References available on request.",

@@ -27,8 +27,8 @@ const STYLES = `
 
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 9.7pt;
-    line-height: 1.36;
+    font-size: 9.5pt;
+    line-height: 1.28;
     color: #1a1a1a;
     background: #fff;
   }
@@ -55,7 +55,7 @@ const STYLES = `
   .contact a { color: #555; text-decoration: none; }
 
   h2 {
-    margin-top: 12px;
+    margin-top: 9px;
     padding-bottom: 2px;
     border-bottom: 0.9px solid #999;
     font-size: 9pt;
@@ -65,10 +65,10 @@ const STYLES = `
     color: #111;
   }
 
-  section { margin-top: 4px; }
+  section { margin-top: 3px; }
   p { text-align: justify; }
 
-  .skill-row { margin-top: 6px; display: flex; gap: 8px; align-items: baseline; }
+  .skill-row { margin-top: 4px; display: flex; gap: 8px; align-items: baseline; }
   .skill-label {
     flex: 0 0 128px;
     font-size: 8.5pt;
@@ -77,8 +77,8 @@ const STYLES = `
   }
   .skill-items { font-size: 8.9pt; color: #222; }
 
-  .job { margin-top: 8px; }
-  .job:first-child { margin-top: 6px; }
+  .job { margin-top: 5px; }
+  .job:first-child { margin-top: 3px; }
   .job-head {
     display: flex;
     justify-content: space-between;
@@ -88,14 +88,14 @@ const STYLES = `
   .job-title { font-size: 10pt; font-weight: 700; }
   .job-meta { font-size: 8.5pt; color: #555; white-space: nowrap; }
 
-  ul { margin-top: 4px; padding-left: 13px; }
-  li { margin-top: 2.5px; }
+  ul { margin-top: 3px; padding-left: 13px; }
+  li { margin-top: 1.5px; }
 
-  .edu { margin-top: 6px; }
+  .edu { margin-top: 4px; }
   .edu-title { font-weight: 700; font-size: 9.7pt; }
   .edu-detail { font-size: 8.7pt; color: #444; }
 
-  .cert { margin-top: 4px; font-size: 9pt; }
+  .cert { margin-top: 3px; font-size: 9pt; }
   .cert-meta { color: #555; font-size: 8.5pt; }
   .cert-detail { font-size: 8.9pt; color: #444; }
 

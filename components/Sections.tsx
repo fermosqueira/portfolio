@@ -98,7 +98,7 @@ export function Experience({ lang, index }: { lang: Locale; index: number }) {
                 <span className="text-muted"> · {meta.company}</span>
               </h3>
               {item.kind && (
-                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-accent-dim">
+                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-link">
                   {item.kind}
                 </p>
               )}
@@ -107,7 +107,7 @@ export function Experience({ lang, index }: { lang: Locale; index: number }) {
               <ul className="mt-4 space-y-2.5">
                 {item.bullets.map((bullet) => (
                   <li key={bullet.slice(0, 24)} className="flex gap-3 text-sm leading-relaxed text-muted">
-                    <span aria-hidden className="mt-px shrink-0 font-mono text-accent-dim">
+                    <span aria-hidden className="mt-px shrink-0 font-mono text-link">
                       +
                     </span>
                     <span>{bullet}</span>
@@ -180,7 +180,7 @@ export function Certifications({ lang, index }: { lang: Locale; index: number })
               <span
                 className={
                   done
-                    ? "rounded-full bg-accent px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-racing"
+                    ? "rounded-full bg-accent px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-accent-fg"
                     : "rounded-full border border-warn/40 px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-warn"
                 }
               >
@@ -215,7 +215,7 @@ export function AiWorkflow({ lang, index }: { lang: Locale; index: number }) {
             <h3 className="text-base font-medium text-fg">{t.ai.cards[id].title}</h3>
             <ul className="mt-2.5 flex flex-wrap gap-2">
               {AI_CARD_META[id].tools.map((tool) => (
-                <li key={tool} className="font-mono text-xs text-accent">
+                <li key={tool} className="font-mono text-xs text-link">
                   {tool}
                 </li>
               ))}
@@ -251,7 +251,7 @@ export function Projects({ lang, index }: { lang: Locale; index: number }) {
                 <span
                   className={
                     shipped
-                      ? "shrink-0 whitespace-nowrap rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-accent"
+                      ? "shrink-0 whitespace-nowrap rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-link"
                       : "shrink-0 whitespace-nowrap rounded-full border border-warn/40 px-2 py-0.5 font-mono text-[0.625rem] uppercase tracking-wider text-warn"
                   }
                 >
@@ -274,7 +274,7 @@ export function Projects({ lang, index }: { lang: Locale; index: number }) {
                       href={meta.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-mono text-xs text-accent hover:underline"
+                      className="font-mono text-xs text-link hover:underline"
                     >
                       {t.projects.viewLive} ↗
                     </a>
@@ -284,7 +284,7 @@ export function Projects({ lang, index }: { lang: Locale; index: number }) {
                       href={meta.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-mono text-xs text-accent hover:underline"
+                      className="font-mono text-xs text-link hover:underline"
                     >
                       {t.projects.viewRepo} ↗
                     </a>
@@ -312,7 +312,7 @@ export function Contact({ lang, index }: { lang: Locale; index: number }) {
             {t.contact.emailLabel}
           </dt>
           <dd>
-            <Email className="text-sm text-accent hover:underline" />
+            <Email className="text-sm text-link hover:underline" />
           </dd>
         </div>
         <div className="flex flex-wrap items-baseline gap-x-4">
@@ -324,7 +324,7 @@ export function Contact({ lang, index }: { lang: Locale; index: number }) {
               href={PROFILE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-accent hover:underline"
+              className="text-sm text-link hover:underline"
             >
               {PROFILE.linkedinLabel} ↗
             </a>
@@ -337,7 +337,7 @@ export function Contact({ lang, index }: { lang: Locale; index: number }) {
               href={PROFILE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-accent hover:underline"
+              className="text-sm text-link hover:underline"
             >
               {PROFILE.githubLabel} ↗
             </a>
@@ -349,7 +349,7 @@ export function Contact({ lang, index }: { lang: Locale; index: number }) {
             <a
               href={`/cv-${lang}.pdf`}
               download
-              className="text-sm text-accent hover:underline"
+              className="text-sm text-link hover:underline"
             >
               {t.common.downloadCv} (PDF)
             </a>
