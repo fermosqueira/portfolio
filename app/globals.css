@@ -27,6 +27,12 @@
   --color-wash: #241a45;
 
   /*
+   * Light-it's own secondary accent (their "What we do" CTA, lightit.io).
+   * Used sparingly — one or two touches, never as a second primary color.
+   */
+  --color-accent-2: #d8ee17;
+
+  /*
    * The only non-violet hue on the page, and only ever functional: "in
    * progress" states (a certification being studied, a project mid-build) —
    * never decoration. Violet still means done everywhere else.

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PROFILE, TEST_STATS, type Locale } from "@/lib/content/schema";
 import { getDictionary } from "@/lib/i18n";
 
@@ -6,9 +7,14 @@ export function Hero({ lang }: { lang: Locale }) {
 
   return (
     <section className="pb-4 pt-16 sm:pt-24" aria-labelledby="hero-name">
-      <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-full border border-line-strong bg-surface font-mono text-lg font-semibold text-link">
-        {PROFILE.monogram}
-      </div>
+      <Image
+        src="/fernando.png"
+        alt={PROFILE.name}
+        width={64}
+        height={64}
+        priority
+        className="mb-8 h-16 w-16 rounded-full border border-line-strong object-cover"
+      />
 
       <h1
         id="hero-name"
@@ -60,7 +66,7 @@ export function Hero({ lang }: { lang: Locale }) {
             ·
           </span>
           <span className="text-muted">ES/EN parity</span>
-          <span aria-hidden className="caret-blink ml-0.5 inline-block h-3 w-[6px] bg-accent" />
+          <span aria-hidden className="caret-blink ml-0.5 inline-block h-3 w-[6px] bg-accent-2" />
         </div>
       </div>
       <p className="mt-2 max-w-xs font-mono text-[0.6875rem] leading-relaxed text-muted">

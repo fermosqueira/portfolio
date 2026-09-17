@@ -88,7 +88,7 @@ export function Experience({ lang, index }: { lang: Locale; index: number }) {
             <li key={id} className="relative">
               <span
                 aria-hidden
-                className="absolute -left-[1.8125rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-accent bg-bg"
+                className="absolute -left-[1.8125rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-accent-2 bg-bg"
               />
               <p className="font-mono text-xs text-muted">
                 {formatPeriod(meta.start, meta.end, lang, t.common.present)}
